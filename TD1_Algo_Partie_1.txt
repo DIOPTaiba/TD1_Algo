@@ -1,0 +1,582 @@
+EXO 1:
+
+ALGORITHME Calcul_Quotient
+VARIABLES
+  a EST_DU_TYPE NOMBRE
+  b EST_DU_TYPE NOMBRE
+  quotient_entier EST_DU_TYPE NOMBRE
+  reste_division EST_DU_TYPE NOMBRE
+  quotient_reel EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+  LIRE a
+  LIRE b
+  quotient_entier PREND_LA_VALEUR floor(a/b)
+  reste_division PREND_LA_VALEUR a%b
+  quotient_reel PREND_LA_VALEUR a/b
+  AFFICHER "Le quotient entier est :"
+  AFFICHER quotient_entier
+  AFFICHER "Le reste de la division est : "
+  AFFICHER reste_division
+  AFFICHER "Le quotien reel est :"
+  AFFICHER quotient_reel
+FIN_ALGORITHME
+
+
+
+
+EXO 2:
+
+ALGORITHME Cercle
+VARIABLES
+  rayon EST_DU_TYPE NOMBRE
+  surface EST_DU_TYPE NOMBRE
+  perimetre EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+  LIRE rayon
+  surface PREND_LA_VALEUR rayon*rayon*(4*atan(1))
+  AFFICHER "La surface du cercle est :"
+  AFFICHER surface
+  perimetre PREND_LA_VALEUR 2*rayon*(4*atan(1))
+  AFFICHER "Le périmètre du cercle est :"
+  AFFICHER perimetre
+FIN_ALGORITHME
+
+
+
+
+EXO 3: Version 1
+
+ALGORITHME Calcul_Resistance
+VARIABLES
+  R1 EST_DU_TYPE NOMBRE
+  R2 EST_DU_TYPE NOMBRE
+  R3 EST_DU_TYPE NOMBRE
+  resistance_parallele EST_DU_TYPE NOMBRE
+  resistance_serie EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+  LIRE R1
+  LIRE R2
+  LIRE R3
+  resistance_parallele PREND_LA_VALEUR (R1 * R2 * R3) / (R1*R2 + R2*R3 + R1*R3)
+  AFFICHER "La résistance parallèle est : "
+  AFFICHER resistance_parallele
+  resistance_serie PREND_LA_VALEUR R1+R2+R3
+  AFFICHER "La résistance en série est = "
+  AFFICHER resistance_serie
+FIN_ALGORITHME
+
+
+
+
+
+EXO 3: Version 2
+
+ALGORITHME Calcul_Resistance
+VARIABLES
+  R1 EST_DU_TYPE NOMBRE
+  R2 EST_DU_TYPE NOMBRE
+  R3 EST_DU_TYPE NOMBRE
+  resistance_parallele EST_DU_TYPE NOMBRE
+  resistance_serie EST_DU_TYPE NOMBRE
+  choix EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+  LIRE R1
+  LIRE R2
+  LIRE R3
+  AFFICHER "Taper 1 pour la résistance en parallele"
+  AFFICHER "Taper 2 pour la résistance en série"
+  LIRE choix
+  SI (choix == 1) ALORS
+    DEBUT_SI
+    resistance_parallele PREND_LA_VALEUR (R1 * R2 * R3) / (R1*R2 + R2*R3 + R1*R3)
+    AFFICHER "La résistance parallèle est = "
+    AFFICHER* resistance_parallele
+    FIN_SI
+    SINON
+      DEBUT_SINON
+      resistance_serie PREND_LA_VALEUR R1+R2+R3
+      AFFICHER "La résistance en série est = "
+      AFFICHER resistance_serie
+      FIN_SINON
+FIN_ALGORITHME
+
+
+
+
+EXO 4: Version 1
+
+ALGORITHME Calcul_Puissance
+VARIABLES
+  x EST_DU_TYPE NOMBRE
+  n EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+  LIRE x
+  LIRE n
+  AFFICHER x
+  AFFICHER " à la puissance "
+  AFFICHER n
+  AFFICHER " = "
+  AFFICHERCALCUL pow(x,n)
+FIN_ALGORITHME
+
+
+
+
+EXO 4: Version 2
+
+ALGORITHME Calcul_Puissance_Boucle
+VARIABLES
+  x EST_DU_TYPE NOMBRE
+  n EST_DU_TYPE NOMBRE
+  resultat EST_DU_TYPE NOMBRE
+  n_initial EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+  LIRE x
+  LIRE n
+  n_initial PREND_LA_VALEUR n
+  resultat PREND_LA_VALEUR 1
+  TANT_QUE (n>0) FAIRE
+    DEBUT_TANT_QUE
+    resultat PREND_LA_VALEUR resultat*x
+    n PREND_LA_VALEUR n-1
+    FIN_TANT_QUE
+  AFFICHER x
+  AFFICHER " à la puissance "
+  AFFICHER n_initial
+  AFFICHER " = "
+  AFFICHER resultat
+FIN_ALGORITHME
+
+
+
+
+EXO 5:
+
+ALGORITHME Calcul_Somme
+VARIABLES
+  entier_recu EST_DU_TYPE NOMBRE
+  somme EST_DU_TYPE NOMBRE
+  compteur EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+  POUR compteur ALLANT_DE 1 A 5
+    DEBUT_POUR
+    AFFICHER "Donner un entier"
+    LIRE entier_recu
+    somme PREND_LA_VALEUR somme+entier_recu
+    FIN_POUR
+  AFFICHER "La somme = "
+  AFFICHER somme
+FIN_ALGORITHME
+
+
+
+
+EXO 6:
+
+ALGORITHME Calcul_Distance
+VARIABLES
+  x1 EST_DU_TYPE NOMBRE
+  y1 EST_DU_TYPE NOMBRE
+  x2 EST_DU_TYPE NOMBRE
+  y2 EST_DU_TYPE NOMBRE
+  distance EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+  AFFICHER "Donner l'abscisse du point A"
+  LIRE x1
+  AFFICHER "Donner l'ordonnée du point A"
+  LIRE y1
+  AFFICHER "Donner l'abscisse du point B"
+  LIRE x2
+  AFFICHER "Donner l'ordonnee du point B"
+  LIRE y2
+  distance PREND_LA_VALEUR sqrt((x1-x2)*2 + (y1-y2)*2)
+  AFFICHER "La distance entre A et B = "
+  AFFICHER distance
+FIN_ALGORITHME
+
+
+
+
+EXO 7:
+
+ALGORITHME Decomposition_Montant
+VARIABLES
+  montant EST_DU_TYPE NOMBRE
+  nombre_billet_20 EST_DU_TYPE NOMBRE
+  nombre_billet_10 EST_DU_TYPE NOMBRE
+  nombre_billet_5 EST_DU_TYPE NOMBRE
+  nombre_piece_2 EST_DU_TYPE NOMBRE
+  nombre_piece_1 EST_DU_TYPE NOMBRE
+  reste EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+  LIRE montant
+  nombre_billet_20 PREND_LA_VALEUR floor(montant/20)
+  reste PREND_LA_VALEUR montant%20
+  nombre_billet_10 PREND_LA_VALEUR floor(reste/10)
+  reste PREND_LA_VALEUR reste%10
+  nombre_billet_5 PREND_LA_VALEUR floor(reste/5)
+  reste PREND_LA_VALEUR reste%5
+  nombre_piece_2 PREND_LA_VALEUR floor(reste/2)
+  reste PREND_LA_VALEUR reste%2
+  nombre_piece_1 PREND_LA_VALEUR reste
+  AFFICHER "nombre billet 20 = "
+  AFFICHER nombre_billet_20
+  AFFICHER "nombre billet 10 = "
+  AFFICHER nombre_billet_10
+  AFFICHER "nombre billet 5 = "
+  AFFICHER nombre_billet_5
+  AFFICHER "nombre piece de 2 = "
+  AFFICHER nombre_piece_2
+  AFFICHER "nombre billet de 1 = "
+  AFFICHER nombre_piece_1
+FIN_ALGORITHME
+
+
+
+
+EXO 8:
+
+ALGORITHME Resoudre_Equation_Second_Degre
+VARIABLES
+  a EST_DU_TYPE NOMBRE
+  b EST_DU_TYPE NOMBRE
+  c EST_DU_TYPE NOMBRE
+  delta EST_DU_TYPE NOMBRE
+  S1 EST_DU_TYPE NOMBRE
+  S2 EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+  AFFICHER "Donner la valeur de a"
+  LIRE a
+  AFFICHER "Donner la valeur de b"
+  LIRE b
+  AFFICHER "Donner la valeur de c"
+  LIRE c
+      delta PREND_LA_VALEUR (b*b)-(4*a*c)
+      SI (delta > 0) ALORS
+        DEBUT_SI
+        	AFFICHER "L'équation admet 2 solutions : S1="
+	        AFFICHERCALCUL (-b-sqrt(delta))/(2*a)
+        	AFFICHER " et S2="
+	        AFFICHERCALCUL (-b+sqrt(delta))/(2*a)
+       FIN_SI
+       SINON
+          DEBUT_SINON
+          SI (delta == 0) ALORS
+            DEBUT_SI
+            	AFFICHER "L'équation admet une unique solution  S = "
+            	AFFICHERCALCUL -b/(2*a)
+            FIN_SI
+            SINON
+              DEBUT_SINON
+              AFFICHER "L'équation n'admet pas de solution réel"
+            FIN_SINON
+       FIN_SINON
+FIN_ALGORITHME
+
+
+
+
+
+EXO 9: Version 1
+
+ALGORITHME Calcul_Duree_Vol
+VARIABLES
+  	heure_depart EST_DU_TYPE NOMBRE
+	minute_depart EST_DU_TYPE NOMBRE
+  	heure_arrive EST_DU_TYPE NOMBRE
+  	minute_arrive EST_DU_TYPE NOMBRE
+  	duree_heure EST_DU_TYPE NOMBRE
+  	duree_minute EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+  	AFFICHER "Donner heure départ"
+  	LIRE heure_depart
+  	AFFICHER "Donner minute départ"
+  	LIRE minute_depart
+  	AFFICHER "Donner heure d'arrivée"
+  	LIRE heure_arrive
+  	AFFICHER "Donner minute d'arrivée"
+  	LIRE minute_arrive
+  	SI (minute_arrive >= minute_depart) ALORS
+    	DEBUT_SI
+	    duree_heure PREND_LA_VALEUR heure_arrive - heure_depart
+	    duree_minute PREND_LA_VALEUR minute_arrive - minute_depart
+    	FIN_SI
+    	SINON
+      	DEBUT_SINON
+      		duree_heure PREND_LA_VALEUR heure_arrive-heure_depart-1
+	    	duree_minute PREND_LA_VALEUR minute_arrive+60-minute_depart
+      	FIN_SINON
+  	AFFICHER "La dure de vol = "
+  	AFFICHER duree_heure
+  	AFFICHER ":"
+  	AFFICHER duree_minute
+FIN_ALGORITHME
+
+
+
+
+
+EXO 9: Version 2
+
+
+ALGORITHME Calcul_Duree_Vol
+VARIABLES
+  heure_depart EST_DU_TYPE NOMBRE
+  minute_depart EST_DU_TYPE NOMBRE
+  heure_arrive EST_DU_TYPE NOMBRE
+  minute_arrive EST_DU_TYPE NOMBRE
+  duree_heure EST_DU_TYPE NOMBRE
+  duree_minute EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+  AFFICHER "Donner heure départ"
+  LIRE heure_depart
+  AFFICHER "Donner minute départ"
+  LIRE minute_depart
+  AFFICHER* "Donner heure d'arrivée"
+  LIRE heure_arrive
+  AFFICHER "Donner minute d'arrivée"
+  LIRE minute_arrive
+  SI (heure_arrive > heure_depart) ALORS
+    DEBUT_SI
+    SI (minute_arrive > minute_depart) ALORS
+      DEBUT_SI
+      duree_heure PREND_LA_VALEUR heure_arrive - heure_depart
+      duree_minute PREND_LA_VALEUR minute_arrive - minute_depart
+      FIN_SI
+      SINON
+        DEBUT_SINON
+        duree_heure PREND_LA_VALEUR heure_arrive-heure_depart-1
+        duree_minute PREND_LA_VALEUR minute_arrive+60-minute_depart
+        FIN_SINON
+    FIN_SI
+    SINON
+      DEBUT_SINON
+      SI (minute_arrive > minute_depart) ALORS
+        DEBUT_SI
+        duree_heure PREND_LA_VALEUR heure_arrive - heure_depart +24
+        duree_minute PREND_LA_VALEUR minute_arrive - minute_depart
+        FIN_SI
+        SINON
+          DEBUT_SINON
+          duree_heure PREND_LA_VALEUR heure_arrive + 24 - heure_depart - 1
+          duree_minute PREND_LA_VALEUR minute_arrive + 60 - minute_depart
+          FIN_SINON
+      FIN_SINON
+  AFFICHER "La dure de vol = "
+  AFFICHER duree_heure
+  AFFICHER ":"
+  AFFICHER duree_minute
+FIN_ALGORITHME
+
+
+
+
+
+EXO 10:
+
+ALGORITHME Tri_Par_Echange
+VARIABLES
+  a EST_DU_TYPE NOMBRE
+  b EST_DU_TYPE NOMBRE
+  c EST_DU_TYPE NOMBRE
+  echangeur EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+  LIRE a
+  LIRE b
+  LIRE c
+  SI (a>b) ALORS
+    DEBUT_SI
+    echangeur PREND_LA_VALEUR a
+    a PREND_LA_VALEUR b
+    b PREND_LA_VALEUR echangeur
+    SI (b>c) ALORS
+      DEBUT_SI
+      echangeur PREND_LA_VALEUR b
+      b PREND_LA_VALEUR c
+      c PREND_LA_VALEUR echangeur
+      SI (a>b) ALORS
+        DEBUT_SI
+        echangeur PREND_LA_VALEUR a
+        a PREND_LA_VALEUR b
+        b PREND_LA_VALEUR echangeur
+        FIN_SI
+      FIN_SI
+    FIN_SI
+    SINON
+      DEBUT_SINON
+      SI (b>c) ALORS
+        DEBUT_SI
+        echangeur PREND_LA_VALEUR b
+        b PREND_LA_VALEUR c
+        c PREND_LA_VALEUR echangeur
+        SI (a>b) ALORS
+          DEBUT_SI
+          echangeur PREND_LA_VALEUR a
+          a PREND_LA_VALEUR b
+          b PREND_LA_VALEUR echangeur
+          FIN_SI
+        FIN_SI
+      FIN_SINON
+  AFFICHER "Voici les valeurs dans l'odre croissant : "
+  AFFICHER a
+  AFFICHER ", "
+  AFFICHER b
+  AFFICHER ", et "
+  AFFICHER c
+FIN_ALGORITHME
+
+
+
+
+
+EXO 11:
+
+ALGORITHME Calculatrice
+VARIABLES
+  a EST_DU_TYPE NOMBRE
+  b EST_DU_TYPE NOMBRE
+  operation EST_DU_TYPE CHAINE
+  resultat EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+  LIRE a
+  LIRE operation
+  LIRE b
+  SI (operation == "+") ALORS
+    DEBUT_SI
+    resultat PREND_LA_VALEUR a+b
+    FIN_SI
+  SI (operation == "-") ALORS
+    DEBUT_SI
+    resultat PREND_LA_VALEUR a-b
+    FIN_SI
+  SI (operation == "*") ALORS
+    DEBUT_SI
+    resultat PREND_LA_VALEUR a*b
+    FIN_SI
+  SI (operation == "/") ALORS
+    DEBUT_SI
+    SI (b==0) ALORS
+      DEBUT_SI
+      AFFICHER "Opération impossible (division par 0)"
+      FIN_SI
+      SINON
+        DEBUT_SINON
+        resultat PREND_LA_VALEUR a/b
+        FIN_SINON
+    FIN_SI
+  SI (b != 0) ALORS
+    DEBUT_SI
+    AFFICHER "Le resultat de a"
+    AFFICHER operation
+    AFFICHER "b="
+    AFFICHER resultat
+    FIN_SI
+FIN_ALGORITHME
+
+
+
+
+
+EXO 12:
+
+ALGORITHME Nombre_Parfait
+VARIABLES
+  nombre_a_tester EST_DU_TYPE NOMBRE
+  diviseur EST_DU_TYPE NOMBRE
+  somme EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+  LIRE nombre_a_tester
+  SI (nombre_a_tester == 0) ALORS
+    DEBUT_SI
+    AFFICHER* "Le nombre 0 n'est pas parfait"
+    FIN_SI
+    SINON
+      DEBUT_SINON
+      POUR diviseur ALLANT_DE 1 A nombre_a_tester/2
+        DEBUT_POUR
+        SI (nombre_a_tester % diviseur == 0) ALORS
+          DEBUT_SI
+          somme PREND_LA_VALEUR somme+diviseur
+          FIN_SI
+        FIN_POUR
+      SI (nombre_a_tester == somme) ALORS
+        DEBUT_SI
+        AFFICHER "Le nombre "
+        AFFICHER nombre_a_tester
+        AFFICHER " est parfait"
+        FIN_SI
+        SINON
+          DEBUT_SINON
+          AFFICHER "Le nombre "
+          AFFICHER nombre_a_tester
+          AFFICHER " n'est pas parfait"
+          FIN_SINON
+      FIN_SINON
+FIN_ALGORITHME
+
+
+
+
+
+EXO 13
+
+ALGORITHME Validite_Date
+VARIABLES
+  jour EST_DU_TYPE NOMBRE
+  mois EST_DU_TYPE NOMBRE
+  annee EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+  LIRE jour
+  LIRE mois
+  LIRE annee
+  SI (jour <= 0 ou mois <= 0 ou annee <= 0 ou jour>31 ou mois>12) ALORS
+    DEBUT_SI
+    AFFICHER "Date invalide"
+    FIN_SI
+    SINON
+      DEBUT_SINON
+      SI (jour <= 31 et (mois==1 ou mois==3 ou mois==5 ou mois==7 ou mois==8 ou mois==10 ou mois==12)) ALORS
+        DEBUT_SI
+        AFFICHER "Date Valide"
+        FIN_SI
+      SI (jour<=30 et (mois==4 ou mois==6 ou mois==9 ou mois==11)) ALORS
+        DEBUT_SI
+        AFFICHER "Date Valide"
+        FIN_SI
+      SI (jour>=31 et (mois==4 ou mois==6 ou mois==9 ou mois==11)) ALORS
+        DEBUT_SI
+        AFFICHER "Date invalide"
+        FIN_SI
+      SI (mois == 2) ALORS
+        DEBUT_SI
+        SI (annee%4 == 0 et  annee%100 != 0 ou annee%400 == 0) ALORS
+          DEBUT_SI
+          SI (jour<=29) ALORS
+            DEBUT_SI
+            AFFICHER "Date valide"
+            FIN_SI
+            SINON
+              DEBUT_SINON
+              AFFICHER "Date invalide"
+              FIN_SINON
+          FIN_SI
+          SINON
+            DEBUT_SINON
+            SI (jour<=28) ALORS
+              DEBUT_SI
+              AFFICHER "Date valide"
+              FIN_SI
+              SINON
+                DEBUT_SINON
+                AFFICHER* "Date invalide"
+                FIN_SINON
+            FIN_SINON
+        FIN_SI
+      FIN_SINON
+  AFFICHER "Date entrer : "
+  AFFICHER jour
+  AFFICHER "/"
+  AFFICHER mois
+  AFFICHER "/"
+  AFFICHER annee
+FIN_ALGORITHME
