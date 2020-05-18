@@ -1,0 +1,518 @@
+EXO 14 :
+
+ALGORITHME Test_Annee_Bissextile
+VARIABLES
+  annee EST_DU_TYPE NOMBRE
+  mois EST_DU_TYPE NOMBRE
+  jour EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+  AFFICHER "Donner le jour"
+  LIRE jour
+  AFFICHER "Donner le mois"
+  LIRE mois
+  AFFICHER "Donner l'annee"
+  LIRE annee
+  SI (annee%4 == 0 et  (annee%100 != 0 ou annee%400 == 0)) ALORS
+    DEBUT_SI
+    AFFICHER "L'année "
+    AFFICHER annee
+    AFFICHER " est bissextile"
+    FIN_SI
+    SINON
+      DEBUT_SINON
+      AFFICHER "L'année ",annee," n'est pas bissextile"
+      FIN_SINON
+FIN_ALGORITHME
+
+
+
+
+
+EXO 15 : Partie 1
+
+ALGORITHME Calcul_Somme
+VARIABLES
+  nombreEntrer EST_DU_TYPE NOMBRE
+  i EST_DU_TYPE NOMBRE
+  somme EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+  LIRE nombreEntrer
+  somme PREND_LA_VALEUR 0
+  POUR i ALLANT_DE 1 A nombreEntrer
+    DEBUT_POUR
+    somme PREND_LA_VALEUR somme+i
+    FIN_POUR
+  AFFICHER "La somme est : ",somme
+FIN_ALGORITHME
+
+
+EXO 15 : Partie 2
+
+ALGORITHME Calcul_Moyenne
+VARIABLES
+  nombreEntrer EST_DU_TYPE NOMBRE
+  i EST_DU_TYPE NOMBRE
+  somme EST_DU_TYPE NOMBRE
+  moyenne EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+  LIRE nombreEntrer
+  somme PREND_LA_VALEUR 0
+  POUR i ALLANT_DE 1 A nombreEntrer
+    DEBUT_POUR
+    somme PREND_LA_VALEUR somme+i
+    FIN_POUR
+  moyenne PREND_LA_VALEUR somme/nombreEntrer
+  AFFICHER "La moyenne est : ",moyenne
+FIN_ALGORITHME
+
+
+
+
+
+EXO 16 :
+
+ALGORITHME Division
+VARIABLES
+  a EST_DU_TYPE NOMBRE
+  b EST_DU_TYPE NOMBRE
+  quotient_division EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+  AFFICHER "Entrer la valeur de a"
+  LIRE a
+  AFFICHER "Entrer la valeur de b"
+  LIRE b
+  quotient_division PREND_LA_VALEUR 0
+  TANT_QUE (a>=b) FAIRE
+    DEBUT_TANT_QUE
+    quotient_division PREND_LA_VALEUR quotient_division+1
+    a PREND_LA_VALEUR a-b
+    FIN_TANT_QUE
+  AFFICHER "Le résultat de la division est : ",quotient_division
+FIN_ALGORITHME
+
+
+
+
+
+EXO 17 :
+
+ALGORITHME Calcul_PGCD
+VARIABLES
+  a EST_DU_TYPE NOMBRE
+  b EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+  AFFICHER "Entrer l'entier a"
+  LIRE a
+  AFFICHER "Entrer l'entier b"
+  LIRE b
+  TANT_QUE (a>b ou a<b) FAIRE
+    DEBUT_TANT_QUE
+    SI (a>b) ALORS
+      DEBUT_SI
+      a PREND_LA_VALEUR a-b
+      FIN_SI
+      SINON
+        DEBUT_SINON
+        b PREND_LA_VALEUR b-a
+        FIN_SINON
+    FIN_TANT_QUE
+  AFFICHER "Le PGCD de a et b = ",b
+FIN_ALGORITHME
+
+
+
+
+
+EXO 18 :
+
+ALGORITHME Calcul_PPCM
+VARIABLES
+  a EST_DU_TYPE NOMBRE
+  b EST_DU_TYPE NOMBRE
+  PPCM EST_DU_TYPE NOMBRE
+  produit EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+  AFFICHER "Entrer l'entier a"
+  LIRE a
+  AFFICHER "Entrer l'entier b"
+  LIRE b
+  produit PREND_LA_VALEUR a*b
+  TANT_QUE (a>b ou a<b) FAIRE
+    DEBUT_TANT_QUE
+    SI (a>b) ALORS
+      DEBUT_SI
+      a PREND_LA_VALEUR a-b
+      FIN_SI
+      SINON
+        DEBUT_SINON
+        b PREND_LA_VALEUR b-a
+        FIN_SINON
+    FIN_TANT_QUE
+  PPCM PREND_LA_VALEUR produit/a
+  AFFICHER "Le PPCM de a et b = ",PPCM
+FIN_ALGORITHME
+
+
+
+
+
+EXO 19 :
+
+ALGORITHME Somme_Prix_Articles
+VARIABLES
+  prix EST_DU_TYPE NOMBRE
+  somme EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+  AFFICHER "Entrer le prix d'un article"
+  LIRE prix
+  TANT_QUE (prix != 0) FAIRE
+    DEBUT_TANT_QUE
+    somme PREND_LA_VALEUR somme+prix
+    AFFICHER "Taper 0 s'il n'y a  plus d'article sinon donner le prix de l'article suivant"
+    LIRE prix
+    FIN_TANT_QUE
+  AFFICHER "La somme des articles est : ",somme," FCFA"
+FIN_ALGORITHME
+
+
+
+
+
+EXO 20 :
+
+ALGORITHME Plus_Grand_Nombre
+VARIABLES
+  plusGrand EST_DU_TYPE NOMBRE
+  compteur EST_DU_TYPE NOMBRE
+  nombreEntrer EST_DU_TYPE NOMBRE
+  rangDuGrand EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+  AFFICHER "Donner un nombre"
+  LIRE nombreEntrer
+  rangDuGrand PREND_LA_VALEUR 1
+  plusGrand PREND_LA_VALEUR nombreEntrer
+  POUR compteur ALLANT_DE 2 A 10
+    DEBUT_POUR
+    AFFICHER "Donner un nombre"
+    LIRE nombreEntrer
+    SI (plusGrand < nombreEntrer) ALORS
+      DEBUT_SI
+      plusGrand PREND_LA_VALEUR nombreEntrer
+      rangDuGrand PREND_LA_VALEUR compteur
+      FIN_SI
+    FIN_POUR
+  AFFICHER "Le plus grand nombre est : ",plusGrand
+  AFFICHER "Le rang du nombre le plus grand est : ",rangDuGrand
+FIN_ALGORITHME
+
+
+
+
+
+EXO 21 : 
+
+ALGORITHME Jeu_Devinette
+VARIABLES
+  nombreADeviner EST_DU_TYPE NOMBRE
+  nombreTentative EST_DU_TYPE NOMBRE
+  proposition EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+  AFFICHER "Donner le nombre à déviner"
+  LIRE nombreADeviner
+  AFFICHER "Essayer de déviner le nombre"
+  LIRE proposition
+  nombreTentative PREND_LA_VALEUR 1
+  TANT_QUE (nombreADeviner != proposition) FAIRE
+    DEBUT_TANT_QUE
+    SI (nombreADeviner > proposition) ALORS
+      DEBUT_SI
+      AFFICHER "Le nombre à déviner est plus grand"
+      FIN_SI
+      SINON
+        DEBUT_SINON
+        AFFICHER "Le nombre à déviner est plus petit"
+        FIN_SINON
+    LIRE proposition
+    nombreTentative PREND_LA_VALEUR nombreTentative+1
+    FIN_TANT_QUE
+  AFFICHER "Bravo vous avez trouver le nombre en ",nombreTentative," tentatives"
+  AFFICHER "Votre score est : ",(1/nombreTentative)*100,"/100"
+FIN_ALGORITHME
+
+
+
+
+
+EXO 22 :
+
+ALGORITHME Plus_Longue_Sequence
+VARIABLES
+  N EST_DU_TYPE NOMBRE
+  longueur EST_DU_TYPE NOMBRE
+  i EST_DU_TYPE NOMBRE
+  tableauEntier EST_DU_TYPE LISTE
+  entier EST_DU_TYPE NOMBRE
+  sequence1 EST_DU_TYPE NOMBRE
+  positionI EST_DU_TYPE NOMBRE
+  positionSPL EST_DU_TYPE NOMBRE
+  positionTmp EST_DU_TYPE NOMBRE
+  longueurSequencePlusLong EST_DU_TYPE NOMBRE
+  valeursSPL EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+  AFFICHER "Donner un nombre entier entre 10 et 50"
+  LIRE N
+  longueurSequencePlusLong PREND_LA_VALEUR 0
+  longueur PREND_LA_VALEUR 1
+  positionTmp PREND_LA_VALEUR 0
+  sequence1 PREND_LA_VALEUR 0
+  positionSPL PREND_LA_VALEUR 0
+  positionI PREND_LA_VALEUR 0
+  TANT_QUE (N<10 ou N>50) FAIRE
+    DEBUT_TANT_QUE
+    AFFICHER "Le nombre d'entier doit être entre 10 et 50"
+    LIRE N
+    FIN_TANT_QUE
+  POUR i ALLANT_DE 0 A N-1
+    DEBUT_POUR
+    AFFICHER "Donner un enteir"
+    LIRE entier
+    TANT_QUE (entier < 1 ou entier > 100) FAIRE
+      DEBUT_TANT_QUE
+      AFFICHER "L'entier doit être entre 1 et 100"
+      LIRE entier
+      FIN_TANT_QUE
+    tableauEntier[i] PREND_LA_VALEUR entier
+    FIN_POUR
+  POUR i ALLANT_DE 0 A N-1
+    DEBUT_POUR
+    SI (tableauEntier[i] < tableauEntier[i+1]) ALORS
+      DEBUT_SI
+      longueur PREND_LA_VALEUR longueur+1
+      FIN_SI
+      SINON
+        DEBUT_SINON
+        longueur PREND_LA_VALEUR 1
+        positionI PREND_LA_VALEUR i+2
+        FIN_SINON
+    SI (longueur > longueurSequencePlusLong) ALORS
+      DEBUT_SI
+      longueurSequencePlusLong PREND_LA_VALEUR longueur
+      FIN_SI
+      SINON
+        DEBUT_SINON
+        SI (longueurSequencePlusLong > sequence1) ALORS
+          DEBUT_SI
+          sequence1 PREND_LA_VALEUR longueurSequencePlusLong
+          positionSPL PREND_LA_VALEUR positionTmp
+          positionTmp PREND_LA_VALEUR positionI
+          FIN_SI
+          SINON
+            DEBUT_SINON
+            SI (longueurSequencePlusLong == sequence1) ALORS
+              DEBUT_SI
+              positionTmp PREND_LA_VALEUR positionI
+              FIN_SI
+            FIN_SINON
+        FIN_SINON
+    FIN_POUR
+  AFFICHER "La plus longue séquence est : "
+  POUR i ALLANT_DE positionSPL-1 A positionSPL + longueurSequencePlusLong - 2
+    DEBUT_POUR
+    valeursSPL PREND_LA_VALEUR tableauEntier[i]
+    AFFICHER valeursSPL," * "
+    FIN_POUR
+  AFFICHER "qui débute à la position ",positionSPL, " et est de longueur ",longueurSequencePlusLong
+FIN_ALGORITHME
+
+
+
+
+
+EXO 23 :
+
+ALGORITHME Calcul_Lapin
+VARIABLES
+  F_0 EST_DU_TYPE NOMBRE
+  F_1 EST_DU_TYPE NOMBRE
+  F_X EST_DU_TYPE NOMBRE
+  i EST_DU_TYPE NOMBRE
+  nbreMois EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+  F_0 PREND_LA_VALEUR 2
+  F_1 PREND_LA_VALEUR 2
+  POUR i ALLANT_DE 1 A 11
+    DEBUT_POUR
+    F_X PREND_LA_VALEUR F_0 + F_1
+    F_0 PREND_LA_VALEUR F_1
+    F_1 PREND_LA_VALEUR F_X
+    FIN_POUR
+  AFFICHER "Le nombre de lapin au 12 ème mois est : ",F_X
+  F_0 PREND_LA_VALEUR 2
+  F_1 PREND_LA_VALEUR 2
+  nbreMois PREND_LA_VALEUR 0
+  F_X PREND_LA_VALEUR 0
+  TANT_QUE (F_X < 1000000000) FAIRE
+    DEBUT_TANT_QUE
+    F_X PREND_LA_VALEUR F_0 + F_1
+    F_0 PREND_LA_VALEUR F_1
+    F_1 PREND_LA_VALEUR F_X
+    nbreMois PREND_LA_VALEUR nbreMois+1
+    FIN_TANT_QUE
+  AFFICHER "On dépassera 1 Millard de lapin au bout de ",nbreMois," mois"
+FIN_ALGORITHME
+
+
+
+
+
+EXO 24 :
+
+ALGORITHME Jeu_Devinette_Version2
+VARIABLES
+  nombreADeviner EST_DU_TYPE NOMBRE
+  nombreTentative EST_DU_TYPE NOMBRE
+  proposition EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+  AFFICHER "Donner le nombre à déviner"
+  LIRE nombreADeviner
+  AFFICHER "Essayer de déviner le nombre"
+  LIRE proposition
+  nombreTentative PREND_LA_VALEUR 1
+  TANT_QUE (nombreADeviner != proposition et nombreTentative < 10) FAIRE
+    DEBUT_TANT_QUE
+    SI (nombreADeviner > proposition) ALORS
+      DEBUT_SI
+      AFFICHER "trop petit"
+      FIN_SI
+      SINON
+        DEBUT_SINON
+        AFFICHER "trop grand"
+        FIN_SINON
+    AFFICHER "Essayer encore"
+    LIRE proposition
+    nombreTentative PREND_LA_VALEUR nombreTentative+1
+    FIN_TANT_QUE
+  SI (nombreTentative >= 10) ALORS
+    DEBUT_SI
+    AFFICHER "Vous avez perdu; Vous avez faits 10 tentatives sans trouvé "
+    FIN_SI
+    SINON
+      DEBUT_SINON
+      AFFICHER "Bravo vous avez trouver le nombre secret en ",nombreTentative, " tentatives"
+      AFFICHER "Votre score est : ",(1/nombreTentative)*100, "/100"
+      FIN_SINON
+FIN_ALGORITHME
+
+
+
+
+
+EXO 25 : Parite 1
+
+#include <stdio.h>
+#include <stdlib.h>
+
+void main(int argc, char *argv[])
+{
+
+    for (int i = 1; i <= 10; i++)
+    {
+        int j = 1;
+        while ( j <= i)
+        {
+            printf("%d ",i);
+            j++;
+        }
+        printf("\n");
+    }
+}
+
+
+EXO 25 : Parite 2
+
+#include <stdio.h>
+#include <stdlib.h>
+
+void main(int argc, char *argv[])
+{
+    int nombre, nbrediviseur = 0;
+    printf("Entrez un nombre entier \n");
+    scanf("%d", &nombre);
+
+    if (nombre == 0 || nombre == 1)
+    {
+        printf("Le nombre %d n'est pas un nombre premier",nombre);
+    }
+    else
+    {
+        for (int i = 1; i <= nombre; i++)
+        {
+          if (nombre%i == 0)
+            {
+                nbrediviseur = nbrediviseur+1;
+            }
+        }
+        if (nbrediviseur > 2)
+        {
+            printf("Le nombre %d n'est pas un nombre premier ",nombre);
+        }
+        else
+        {
+            printf("Le nombre %d est un nombre premier ",nombre);
+        }
+    }
+
+}
+
+
+
+
+
+EXO 26 :
+
+ALGORITHME Test_Ordre
+VARIABLES
+  nombreValeur EST_DU_TYPE NOMBRE
+  tableauValeurs EST_DU_TYPE LISTE
+  i EST_DU_TYPE NOMBRE
+  valeurs EST_DU_TYPE NOMBRE
+  tableauCroissant EST_DU_TYPE NOMBRE
+  tableauDecroissant EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+  AFFICHER "Donner le nombre de valeur de la suite"
+  LIRE nombreValeur
+  tableauCroissant PREND_LA_VALEUR 1
+  tableauDecroissant PREND_LA_VALEUR 1
+  POUR i ALLANT_DE 0 A nombreValeur-1
+    DEBUT_POUR
+    AFFICHER "Donner un nombre"
+    LIRE valeurs
+    tableauValeurs[i] PREND_LA_VALEUR valeurs
+    FIN_POUR
+  POUR i ALLANT_DE 0 A nombreValeur-1
+    DEBUT_POUR
+    SI (tableauValeurs[i] > tableauValeurs[i+1]) ALORS
+      DEBUT_SI
+      tableauCroissant PREND_LA_VALEUR 0
+      FIN_SI
+    SI (tableauValeurs[i] < tableauValeurs[i+1]) ALORS
+      DEBUT_SI
+      tableauDecroissant PREND_LA_VALEUR 0
+      FIN_SI
+    FIN_POUR
+  SI (tableauCroissant == 1) ALORS
+    DEBUT_SI
+    AFFICHER "Le tableau est croissant"
+    FIN_SI
+    SINON
+      DEBUT_SINON
+      SI (tableauDecroissant == 1) ALORS
+        DEBUT_SI
+        AFFICHER "Le tableau est décroissant"
+        FIN_SI
+        SINON
+          DEBUT_SINON
+          AFFICHER "Le tableau est quelconque"
+          FIN_SINON
+      FIN_SINON
+FIN_ALGORITHME
